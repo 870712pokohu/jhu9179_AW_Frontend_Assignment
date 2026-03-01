@@ -6,7 +6,7 @@
  */
 
 import { useEffect, useState } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import ForumPage from "./pages/ForumPage";
 import FavouritesPage from "./pages/FavouritesPage";
@@ -38,7 +38,7 @@ export default function App() {
   }, []);
 
   return (
-    <BrowserRouter basename="/creddit-app">
+    <HashRouter>
       <Navbar userName={userName} />
       <Routes>
         <Route path="/" element={<ForumPage {...favouritesState} />} />
@@ -47,6 +47,6 @@ export default function App() {
           element={<FavouritesPage {...favouritesState} />}
         />
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
